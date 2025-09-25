@@ -56,3 +56,13 @@ document.getElementById("calculateBtn").onclick = function () {
   document.getElementById("result").innerHTML =
     details.join("<br>") + `<br><strong>المجموع: ${total}</strong>`;
 };
+function renderAbjadList() {
+  let html =
+    "<strong>قيمة كل حرف:</strong><ul style='list-style:none;padding:0;margin:0'>";
+  for (const [letter, value] of Object.entries(abjad)) {
+    html += `<li>${letter} = ${value}</li>`;
+  }
+  html += "</ul>";
+  document.getElementById("abjad-list").innerHTML = html;
+}
+renderAbjadList();
