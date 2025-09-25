@@ -66,3 +66,25 @@ function renderAbjadList() {
   document.getElementById("abjad-list").innerHTML = html;
 }
 renderAbjadList();
+document.getElementById("smallAbjadBtn").onclick = function () {
+  let input = document.getElementById("yourInput").value.trim();
+  let words = input.split(/\s+/);
+  let details = [];
+  let total = 0;
+
+  for (let word of words) {
+    let wordSmallSum = 0;
+    for (let char of word) {
+      if (abjad[char]) {
+        wordSmallSum += abjad[char] % 12;
+      }
+    }
+    details.push(`${word} = ${wordSmallSum}`);
+    total += wordSmallSum;
+  }
+
+  document.getElementById(
+    "result"
+  ).innerHTML = `<br><strong>حساب الجمل الصغير: ${total}</strong>`;
+};
+
