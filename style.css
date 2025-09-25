@@ -82,4 +82,22 @@ h1 {
   min-width: 120px;
   direction: rtl;
 }
+}
+#smallAbjadBtn {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  background: #ff9800;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin: 20px auto 0 auto;
+  display: block;
+}
+
+#smallAbjadBtn:hover {
+  background: #e68900;
+}
+
 
