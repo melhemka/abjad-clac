@@ -87,30 +87,42 @@ h1 {
   margin-bottom: 20px;
 }
 
+/* Abjad list always below, responsive and horizontal on mobile */
 #abjad-list {
-  position: fixed;
-  top: 80px;
-  right: 30px;
   background: #fff;
   border: 1.5px solid #ff9800;
   border-radius: 10px;
-  padding: 20px 24px;
+  padding: 16px 10px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   font-size: 1.1rem;
   color: #333;
-  max-height: 70vh;
-  overflow-y: auto;
-  min-width: 140px;
+  margin: 32px auto 0 auto; /* increased margin-top for more space */
+  max-width: 700px;
   direction: rtl;
   z-index: 10;
+  overflow-x: auto;
 }
+
 #abjad-list ul {
+  display: flex;
+  flex-direction: row; /* تأكيد العرض */
+  flex-wrap: wrap; /* التفاف عند الحاجة */
+  gap: 12px;
   padding: 0;
   margin: 0;
+  list-style: none;
+  justify-content: center;
 }
+
 #abjad-list li {
+  background: #ffe0b2;
+  border-radius: 6px;
+  padding: 6px 12px;
   margin-bottom: 6px;
   font-size: 1.05rem;
+  min-width: 48px;
+  text-align: center;
+  border: 1px solid #ff9800;
 }
 
 @media (max-width: 600px) {
@@ -118,12 +130,19 @@ h1 {
     flex-direction: column;
     gap: 12px;
   }
+  #abjad-list ul {
+    flex-wrap: wrap; /* التفاف حتى على الجوال */
+    overflow-x: auto;
+    gap: 8px;
+    justify-content: center;
+  }
   #abjad-list {
-    position: static;
-    margin: 20px auto;
-    max-width: 90vw;
-    min-width: unset;
-    box-shadow: none;
-    border-radius: 8px;
+    max-width: 98vw;
+    padding: 10px 2px;
+  }
+  #abjad-list li {
+    font-size: 0.98rem;
+    min-width: 38px;
+    padding: 4px 8px;
   }
 }
